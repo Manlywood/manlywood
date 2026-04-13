@@ -216,7 +216,7 @@ type FreedomVideoRoute = 'openai_official' | 'unified' | 'volc' | 'wan' | 'kling
 const FREEDOM_VIDEO_ROUTE_MAP: Record<string, FreedomVideoRoute> = {
   'openAI官方视频格式': 'openai_official',
   'openAI视频格式': 'openai_official',
-  '豆包视频异步': 'volc',  // doubao-seedance uses /volc/v1/contents/generations/tasks
+  '豆包视频异步': 'volc',  // doubao-seedance uses /volc/v3/contents/generations/tasks
   '异步': 'wan',
   '文生视频': 'kling',
   '图生视频': 'kling',
@@ -1313,7 +1313,7 @@ async function generateVideoViaVolc(
 
   const body = { model, content };
 
-  const submitResp = await fetch(`${rootBase}/volc/v1/contents/generations/tasks`, {
+  const submitResp = await fetch(`${rootBase}/volc/v3/contents/generations/tasks`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -1329,7 +1329,7 @@ async function generateVideoViaVolc(
   const taskId = submitData.id;
   if (!taskId) throw new Error('Volc 返回空任务 ID');
 
-  const pollUrl = `${rootBase}/volc/v1/contents/generations/tasks/${taskId}`;
+  const pollUrl = `${rootBase}/volc/v3/contents/generations/tasks/${taskId}`;
   for (let i = 0; i < VIDEO_POLL_MAX_ATTEMPTS; i++) {
     await new Promise((r) => setTimeout(r, VIDEO_POLL_INTERVAL));
     const pollResp = await fetch(pollUrl, {
