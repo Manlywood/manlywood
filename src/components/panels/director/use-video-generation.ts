@@ -162,7 +162,7 @@ const VIDEO_FORMAT_MAP: Record<string, 'openai_official' | 'unified' | 'volc' | 
   // OpenAI 官方视频格式 (sora-2): /v1/videos
   'openAI官方视频格式': 'openai_official',
   'openAI视频格式': 'openai_official',
-  // 豆包/Seedance: /volc/v1/contents/generations/tasks
+  // 豆包/Seedance: /volc/v3/contents/generations/tasks
   '豆包视频异步': 'volc',
   // 阿里百炼 wan: /ali/bailian/...
   '异步': 'wan',
@@ -280,7 +280,7 @@ function detectVideoApiFormat(model: string): 'openai_official' | 'unified' | 'v
   const m = model.toLowerCase();
   if (m.includes('sora-2')) return 'openai_official';
   if (m.includes('kling')) return 'kling';
-  // doubao-seedance 走 volc 格式（/volc/v1/contents/generations/tasks）
+  // doubao-seedance 走 volc 格式（/volc/v3/contents/generations/tasks）
   if (m.includes('doubao') || m.includes('seedance') || m.includes('seedream')) return 'volc';
   if (m.includes('wan')) return 'wan';
   return 'unified';
@@ -683,7 +683,7 @@ async function callUnifiedVideoApi(
 }
 
 // ==================== Volcengine 豆包/Seedance 格式 ====================
-// MemeFast 文档: POST /volc/v1/contents/generations/tasks + GET /volc/v1/contents/generations/tasks/{taskId}
+// MemeFast 文档: POST /volc/v3/contents/generations/tasks + GET /volc/v3/contents/generations/tasks/{taskId}
 // 火山方舟文档: https://www.volcengine.com/docs/82379/1520757
 
 async function callVolcVideoApi(
@@ -754,7 +754,7 @@ async function callVolcVideoApi(
 
   const requestBody = { model, content };
 
-  console.log('[VideoGen] Volc format → POST /volc/v1/contents/generations/tasks', {
+  console.log('[VideoGen] Volc format → POST /volc/v3/contents/generations/tasks', {
     model,
     resolution,
     aspectRatio,
@@ -762,7 +762,7 @@ async function callVolcVideoApi(
     imageCount: imageWithRoles.filter(i => i.url).length,
   });
 
-  const submitResponse = await fetch(`${baseUrl}/volc/v1/contents/generations/tasks`, {
+  const submitResponse = await fetch(`${baseUrl}/volc/v3/contents/generations/tasks`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -816,7 +816,7 @@ async function callVolcVideoApi(
     throw new Error(detail || `doubao-seedance 返回空的任务 ID（响应格式未识别，请检查控制台日志）`);
   }
 
-  // 轮询: GET /volc/v1/contents/generations/tasks/{taskId}
+  // 轮询: GET /volc/v3/contents/generations/tasks/{taskId}
   const pollInterval = 5000;
   const maxAttempts = 180; // 15分钟
 
@@ -824,7 +824,7 @@ async function callVolcVideoApi(
     onProgress?.(Math.min(20 + Math.floor((attempt / maxAttempts) * 80), 99));
 
     const statusResponse = await fetch(
-      `${baseUrl}/volc/v1/contents/generations/tasks/${taskId}`,
+      `${baseUrl}/volc/v3/contents/generations/tasks/${taskId}`,
       {
         method: 'GET',
         headers: {
