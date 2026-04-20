@@ -10,12 +10,8 @@
 
 If you discover a security vulnerability, please report it responsibly:
 
-1. **DO NOT** open a public GitHub issue
-2. Send an email to **memecalculate@gmail.com** with:
-   - Description of the vulnerability
-   - Steps to reproduce
-   - Potential impact assessment
-3. You will receive a response within **72 hours**
+1. Open a public GitHub issue
+2. You will receive a response within **72 hours**
 
 ## Disclosure Policy
 
@@ -24,4 +20,4 @@ If you discover a security vulnerability, please report it responsibly:
 - We will release a fix as soon as possible
 - We will credit you in the release notes (unless you prefer anonymity)
 
-Thank you for helping keep Moyin Creator and its users safe.
+Thank you for helping keep Manlywood and its users safe.
