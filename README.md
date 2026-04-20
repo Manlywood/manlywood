@@ -1,7 +1,7 @@
 <p align="center">
-  <img src="build/icon.png" width="120" alt="魔因漫创 Logo" />
+  <img src="build/icon.png" width="120" alt="漫莱坞 Logo" />
 </p>
-<h1 align="center">魔因漫创 Moyin Creator</h1>
+<h1 align="center">漫莱坞</h1>
 
 <p align="center">
   <strong>🎬 AI 影视生产级工具 · 支持 Seedance 2.0 · 剧本到成片全流程批量化</strong>
@@ -9,8 +9,6 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="License" /></a>
-  <a href="https://github.com/MemeCalculate/moyin-creator/releases"><img src="https://img.shields.io/github/v/release/MemeCalculate/moyin-creator" alt="Release" /></a>
-  <a href="https://github.com/MemeCalculate/moyin-creator/stargazers"><img src="https://img.shields.io/github/stars/MemeCalculate/moyin-creator" alt="Stars" /></a>
 </p>
 
 <p align="center">
@@ -32,20 +30,18 @@
 <p align="center">
   <img src="docs/images/screenshot.png" width="800" alt="Screenshot" />
 </p>
--->
 
 ![1771428968476_3nkjdd](https://github.com/user-attachments/assets/582ee70f-f0dc-433b-9d5c-2ddb8f463450)
+-->
 
 ## 简介
 
-**魔因漫创** 是一款面向 AI 影视创作者的生产级工具。五大板块环环相扣，覆盖从剧本到成片的完整创作链路：
+**漫莱坞** 是一款面向 AI 影视创作者的生产级工具。五大板块环环相扣，覆盖从剧本到成片的完整创作链路：
 
 > **📝 剧本 → 🎭 角色 → 🌄 场景 → 🎬 导演 → ⭐ S级（Seedance 2.0）**
 
 每一步的产出自动流入下一步，无需手动搅合。支持多种主流 AI 大模型，适合短剧、动漫番剧、预告片等场景的批量化生产。
 
-
-基础设置教程：https://www.bilibili.com/video/BV1FsZDBHExJ/?vd_source=802462c0708e775ce81f95b2e486f175
 
 
 ## 功能特性
@@ -93,9 +89,6 @@
 - 支持多个 AI 图像/视频生成服务商
 - API Key 轮询负载均衡
 - 任务队列管理，自动重试
-### 下载
-打包程序版本0.1.7，对应开源源码
-链接: https://pan.baidu.com/s/1ImH6tOIiuFxIDXC0fC-6Lg 提取码: 8888 
 
 
 ## 快速开始
@@ -109,8 +102,8 @@
 
 ```bash
 # 克隆仓库
-git clone https://github.com/MemeCalculate/moyin-creator.git
-cd moyin-creator
+git clone https://github.com/Manlywood/manlywood.git
+cd manlywood
 
 # 安装依赖
 npm install
@@ -147,7 +140,7 @@ npx electron-vite build
 ### 项目结构
 
 ```
-moyin-creator/
+manlywood/
 ├── electron/              # Electron 主进程 + Preload
 │   ├── main.ts            # 主进程（存储管理、文件系统、协议处理）
 │   └── preload.ts         # 安全桥接层
@@ -182,21 +175,12 @@ moyin-creator/
 
 ## 联系
 
-- 📧 Email: [memecalculate@gmail.com](mailto:memecalculate@gmail.com)
-- 🐙 GitHub: [https://github.com/MemeCalculate/moyin-creator](https://github.com/MemeCalculate/moyin-creator)
+- 🐙 GitHub: [https://github.com/Manlywood/manlywood](https://github.com/Manlywood/manlywood)
 
-### 联系我们
+### 特别声明
 
-
-
-<img src="https://github.com/user-attachments/assets/351713eb-79c7-4616-8416-397a9398e6e4" width="200" alt="交流群" />
-
-<img src="docs/images/wechat-contact.png" width="200" alt="微信联系" />
-
-
----
-
-<p align="center">Made with ❤️ by <a href="https://github.com/MemeCalculate">MemeCalculate</a></p>
+<p align="center">本项目基于 <a href="https://github.com/MemeCalculate">MemeCalculate</a> 开源项目进行二次开发，遵循原项目开源协议</p>
+<p align="center">❤️ 感谢原作者的贡献和开源精神 ❤️</p>
 
 
 

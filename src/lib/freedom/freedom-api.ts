@@ -493,7 +493,11 @@ async function generateViaImagesEndpoint(
 
   const imagePaths = getImageEndpointPaths(endpointTypes || []);
   const rootBase = getRootBaseUrl(baseUrl);
-  const submitUrl = `${rootBase}${imagePaths.submit}`;
+  let submitUrl = `${rootBase}${imagePaths.submit}`;
+  // 修改api为豆包v3版本
+  if (model.indexOf('seedream') >= 0) {
+    submitUrl = submitUrl.replace('/v1', '/v3');
+  }
   const response = await fetch(submitUrl, {
     method: 'POST',
     headers: {
@@ -1228,7 +1232,11 @@ async function generateVideoViaUnified(
   // 直接使用端点类型对应的 URL（绝对路径，从域名根拼接）
   const endpointPaths = getUnifiedEndpointPaths(endpointTypes || []);
   const rootBase = getRootBaseUrl(baseUrl);
-  const submitUrl = `${rootBase}${endpointPaths.submit}`;
+  let submitUrl = `${rootBase}${endpointPaths.submit}`;
+  // 修改api为豆包v3版本
+  if (model.indexOf('seedance') >= 0) {
+    submitUrl = submitUrl.replace('/v1', '/v3');
+  }
 
   const resp = await fetch(submitUrl, {
     method: 'POST',

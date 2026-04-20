@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="build/icon.png" width="120" alt="Moyin Creator Logo" />
+  <img src="build/icon.png" width="120" alt="Manlywood Logo" />
 </p>
 
-<h1 align="center">Moyin Creator 魔因漫创</h1>
+<h1 align="center">Manlywood</h1>
 
 <p align="center">
   <strong>🎬 AI-Powered Film & Anime Production Tool · Seedance 2.0 · Script-to-Film Batch Pipeline</strong>
@@ -10,8 +10,6 @@
 
 <p align="center">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue.svg" alt="License" /></a>
-  <a href="https://github.com/MemeCalculate/moyin-creator/releases"><img src="https://img.shields.io/github/v/release/MemeCalculate/moyin-creator" alt="Release" /></a>
-  <a href="https://github.com/MemeCalculate/moyin-creator/stargazers"><img src="https://img.shields.io/github/stars/MemeCalculate/moyin-creator" alt="Stars" /></a>
 </p>
 
 <p align="center">
@@ -30,7 +28,7 @@
 
 ## Overview
 
-**Moyin Creator** is a production-grade tool for AI film & anime creators. Five interconnected modules cover the entire pipeline from script to final video:
+**Manlywood** is a production-grade tool for AI film & anime creators. Five interconnected modules cover the entire pipeline from script to final video:
 
 > **📝 Script → 🎭 Characters → 🌄 Scenes → 🎬 Director → ⭐ S-Class (Seedance 2.0)**
 
@@ -97,8 +95,8 @@ Each stage's output automatically flows into the next — no manual glue require
 
 ```bash
 # Clone the repository
-git clone https://github.com/MemeCalculate/moyin-creator.git
-cd moyin-creator
+git clone https://github.com/Manlywood/manlywood.git
+cd manlywood
 
 # Install dependencies
 npm install
@@ -135,7 +133,7 @@ npx electron-vite build
 ### Project Structure
 
 ```
-moyin-creator/
+manlywood/
 ├── electron/              # Electron main process + Preload
 │   ├── main.ts            # Main process (storage, file system, protocol handling)
 │   └── preload.ts         # Security bridge layer
@@ -170,9 +168,11 @@ Contributions are welcome! Please read the [Contributing Guide](CONTRIBUTING.md)
 
 ## Contact
 
-- 📧 Email: [memecalculate@gmail.com](mailto:memecalculate@gmail.com)
-- 🐙 GitHub: [https://github.com/MemeCalculate/moyin-creator](https://github.com/MemeCalculate/moyin-creator)
+- 🐙 GitHub: [https://github.com/Manlywood/manlywood](https://github.com/Manlywood/manlywood)
 
 ---
 
-<p align="center">Made with ❤️ by <a href="https://github.com/MemeCalculate">MemeCalculate</a></p>
+## Statement
+
+<p align="center">This project based on the secondary development of the <a href="https://github.com/MemeCalculate">MemeCalculate</a> open source project, and follows the original project open source agreement.</p>
+<p align="center">❤️ Thanks to the author for his contribution and open source spirit. ❤️</p>
